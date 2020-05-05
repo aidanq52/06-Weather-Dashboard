@@ -1,124 +1,146 @@
 /* weather */
+#search{
+  margin-bottom: 1em;
+}
 
-  
-  /*** Main ***/
-  html, main{
-    height: 100%;
-  }
-  
-  body{
-    background: grey;
-  
-  }
-  
-  main {
-    background-color: floralwhite;
-    min-height: 70%;
-  }
-  
-  main .container {
-    padding-top: 40px;
-    padding-bottom: 100px;
-  
-  }
-  
-  h4{
-    color: cadetblue;
-    /* margin-bottom: 20px; */
-    /* padding-bottom: 10px; */
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  
-  h5{
-    color: cadetblue;
-    border-bottom: gray 2px solid;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .content-box{
-    background-color: #FFF;
-    padding: 20px;
-    border: darkgrey 1px solid;
-    color: grey;
-  }
-  
-  /*** footer ***/
-  footer {
-    text-align: center;
-    background-color: grey;
-    border-top: cadetblue 5px solid;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    color: lightgray;
-    font-size: smaller;
-    width: 100%;
-  }
-  
-  /*** navbar ***/
-  .navbar{
-    padding-top:0;
-    padding-bottom: 0;
-    border-bottom: darkgrey 1px solid;
-    color: grey;
-  }
-  
+.hide{
+  visibility: hidden;
+}
+
+#display{
+  margin-bottom: 1em;
+}
+
+.forecast{
+  border: grey 1px solid;
+  margin: 5px 10px 5px 10px;
+
+}
+p{
+  padding-top: 5px;
+}
+
+.row{
+  padding-bottom: 20px;
+}
+
+/*** Main ***/
+html, main{
+  height: 100%;
+}
+
+body{
+  background: grey;
+
+}
+
+main {
+  background-color: floralwhite;
+  min-height: 70%;
+}
+
+main .container {
+  padding-top: 40px;
+  padding-bottom: 100px;
+
+}
+
+h4{
+  color: cadetblue;
+  /* margin-bottom: 20px; */
+  /* padding-bottom: 10px; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+h5{
+  color: cadetblue;
+  border-bottom: gray 2px solid;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content-box{
+  background-color: #FFF;
+  padding: 20px;
+  border: darkgrey 1px solid;
+  color: grey;
+}
+
+/*** footer ***/
+footer {
+  text-align: center;
+  background-color: grey;
+  border-top: cadetblue 5px solid;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: lightgray;
+  font-size: smaller;
+  width: 100%;
+}
+
+/*** navbar ***/
+.navbar{
+  padding-top:0;
+  padding-bottom: 0;
+  border-bottom: darkgrey 1px solid;
+  color: grey;
+}
+
+.navbar-brand{
+  background-color: cadetblue;
+  padding: 20px 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:hover{
+  color: #FFF;
+}
+
+.navbar-nav .nav-link{
+  padding: 0 .5rem;
+}
+
+.nav-item{
+  border-right: 1px solid gainsboro;
+}
+
+.nav-item:last-child{
+  border-right: none;
+}
+
+
+@media (max-width: 991px){
+  .navbar .container-lg, 
   .navbar-brand{
-    background-color: cadetblue;
-    padding: 20px 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
+      display: block;
   }
-  
-  .navbar-light .navbar-brand,
-  .navbar-light .navbar-brand:hover{
-    color: #FFF;
+
+  .navbar{
+      padding:0;
   }
-  
-  .navbar-nav .nav-link{
-    padding: 0 .5rem;
+
+  .navbar-brand{
+      margin-right: 0;
+      margin-left: 0;
+      text-align: center;
   }
-  
-  .nav-item{
-    border-right: 1px solid gainsboro;
+
+  .navbar-nav{
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom:10px;
   }
-  
-  .nav-item:last-child{
-    border-right: none;
+  a{
+      margin-right: 10px;
+      margin-left: 10px;
   }
-  
-  
-  @media (max-width: 991px){
-    .navbar .container-lg, 
-    .navbar-brand{
-        display: block;
-    }
-  
-    .navbar{
-        padding:0;
-    }
-  
-    .navbar-brand{
-        margin-right: 0;
-        margin-left: 0;
-        text-align: center;
-    }
-  
-    .navbar-nav{
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 10px;
-        margin-bottom:10px;
-    }
-    a{
-        margin-right: 10px;
-        margin-left: 10px;
-    }
-  }
-  
+}
