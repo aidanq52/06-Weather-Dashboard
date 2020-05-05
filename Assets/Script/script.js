@@ -10,7 +10,7 @@ function getWeather(e){
     // console.log($(e.target).attr('class'))
     // console.log(e.target.value);
     var city = '';
-    
+
 console.log(e)
     if(e == undefined){
         city =cityButtonArray[0]
@@ -56,7 +56,7 @@ console.log(e)
             displayDiv.html('');
             temperature = Math.round((response.main.temp - 273.15) * 1.80 + 32)
             displayDiv.html('<h5 id="name">'+response.name+'</h5>');
-            displayDiv.append();
+            displayDiv.append("<p id=tempeature> Temperature: "+temperature+" \xB0F </p>");
             displayDiv.append("<p id=humidity> Humidity: "+response.main.humidity+" % </p>");
             displayDiv.append("<p id=windspeed> Wind Speed: "+response.wind.speed+" mph </p>");
 
@@ -108,7 +108,7 @@ console.log(e)
 
                 for(i=0;i<5;i++){
                     date = moment().add(1+i,'days').format("MMM Do YYYY")
-                    temp = Math.round(response.list[i].temp.day -273.15) * 1.8 + 32
+                    temp = Math.round((response.list[i].temp.day -273.15) * 1.8 + 32)
                     $(".forecast").eq(i).append("<p id=date>"+date+"</p>").append("<p id=temperature> Temp: "+temp+" \xB0F </p>").append("<p id=humidity> Humidity: "+response.list[i].humidity+" % </p>");
 
                 }
