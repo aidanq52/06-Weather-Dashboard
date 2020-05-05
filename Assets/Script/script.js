@@ -1,8 +1,18 @@
+// localStorage.removeItem('Cities')
 displayDiv = $('#display');
 buttonsDiv = $('#buttons');
 cityButtonArray = [];
 
 init();
+function init(){
+    cityButtonArray = JSON.parse(localStorage.getItem('Cities'));
+    console.log(cityButtonArray)
+    if(cityButtonArray == null){
+      return;
+    } else{ recover();
+    }
+    
+}
 // Here we run our AJAX call to the OpenWeatherMap API
 $('#search').on('click', getWeather)
 
@@ -11,11 +21,10 @@ function getWeather(e){
     // console.log(e.target.value);
     var city = '';
 
-console.log(e)
     if(e == undefined){
         city =cityButtonArray[0]
     } else if(e.target.value == "search"){
-        city = $("#city").val()
+        city = $("#city").val();
     } else if($(e.target).attr('class') == "city"){
         city= e.target.value
     } else {
@@ -141,16 +150,16 @@ function renderButtons(){
 
     $('.city').on('click', getWeather);
 
-    console.log(JSON.parse(localStorage.getItem('Cities')));
+    console.log("local storage array: "+JSON.parse(localStorage.getItem('Cities')));
 
 }
 
-function init(){
+function recover(){
     cityButtonArray = JSON.parse(localStorage.getItem('Cities'));
     console.log(cityButtonArray);
 
     if( cityButtonArray == null){
-        cityButtonArray = [];
+        return
     }
     console.log(cityButtonArray)
 
