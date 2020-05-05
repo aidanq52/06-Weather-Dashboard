@@ -3,10 +3,16 @@ buttonsDiv = $('#buttons');
 cityButtonArray = [];
 
 // Here we run our AJAX call to the OpenWeatherMap API
-$('#search').on('click', function(e){
-    console.log(e.target.value);
+$('#search').on('click', getWeather)
 
-    var city = $("#city").val()
+function getWeather(e){
+    console.log(e.target.value);
+    var city = '';
+
+    if(e.target.value == "search"){
+        city = $("#city").val()
+    } else{ city= e.target.value}
+    
     var formattedCity = city.replace(" ", "+")
 
     // console.log(formattedCity)
@@ -98,7 +104,7 @@ $('#search').on('click', function(e){
                 console.log(response.list[0].humidity);
             })
         
-})
+}
 
 function renderButtons(){
 
@@ -116,9 +122,9 @@ function renderButtons(){
     $(".city").css("margin-bottom", ".5em");
     $(".hide").css("visibility", "visible");
 
-    $('.city').on('click', function(e){
-        console.log(e.target);
-    })
+    $('.city').on('click', getWeather);
+
+
     
 
 }
